@@ -131,16 +131,12 @@ hr {
 }
 
 .site-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
   margin: 1em 0;
   line-height: 2.5em;
 }
 
 .brand {
+  display: inline-block;
   border-bottom: 0;
   color: inherit;
   font-size: 1.5rem;
@@ -150,7 +146,7 @@ hr {
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0 1rem;
 }
 
 .nav a {
@@ -211,12 +207,10 @@ ul > li::before {
 .post-list {
   margin: 0 0 4em;
   padding-left: 2ch;
+  list-style: none;
 }
 
 .post-list li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) max-content;
-  gap: 1rem;
   margin: 0.5em 0;
   text-indent: -2ch;
 }
@@ -235,6 +229,10 @@ time {
   font-family: "Roboto Mono", "Courier New", monospace;
   font-size: 0.9em;
   letter-spacing: -0.5px;
+}
+
+.post-list time {
+  margin-left: 0.35rem;
   white-space: nowrap;
 }
 
@@ -294,7 +292,7 @@ pre code {
 }
 
 .info-section {
-  margin-top: 2em;
+  margin-top: 1.75em;
 }
 
 .info-section a + a {
@@ -305,9 +303,9 @@ pre code {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 2rem;
-  padding: 2rem 0;
-  border-top: 0.4rem dotted var(--color-border);
+  margin-top: 2em;
+  padding: 1em 0;
+  border-top: 3px dotted var(--color-border);
   color: var(--color-text-muted);
 }
 
@@ -321,13 +319,10 @@ pre code {
   }
 
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    line-height: 2.1em;
   }
 
   .post-list li {
-    display: list-item;
     margin-bottom: 0.9em;
   }
 

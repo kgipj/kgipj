@@ -51,7 +51,7 @@ https://你的帳號.github.io/
 ## 怎麼改
 
 - 網站標題：改 `index.html` 裡的 `Navi's Notes`
-- 文章列表：改 `<ol class="post-list">` 裡面的每一個 `<li>`
+- 文章列表：改 `<ul class="post-list">` 裡面的每一個 `<li>`
 - 顏色與字體：改 `style.css`
 - 版權文字：改 `<footer class="site-footer">`
 
@@ -60,7 +60,7 @@ https://你的帳號.github.io/
 1. 複製 `templates/post-template.html`
 2. 貼到 `posts/` 資料夾，改成新的檔名，例如 `my-note.html`
 3. 打開新檔案，改文章標題、日期、標籤和內文
-4. 回到 `index.html`，在 `<ol class="post-list">` 最上面新增一列文章連結
+4. 回到 `index.html`，在 `<ul class="post-list">` 最上面新增一列文章連結
 
 文章連結範例：
 
