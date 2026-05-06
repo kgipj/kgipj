@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>如何開始架一個乾淨的個人網站 - Navi's Notes</title>
+    <meta name="description" content="從簡單的文章列表開始，慢慢整理出自己的網站。" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="site">
+      <header class="site-header">
+        <a class="brand" href="../index.html">Navi's Notes</a>
+        <nav class="nav" aria-label="主要導覽">
+          <a href="../index.html">Home</a>
+          <a href="../index.html">Posts</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#tags">Tags</a>
+        </nav>
+      </header>
+
+      <main>
+        <article>
+          <header class="post-header">
+            <h1>如何開始架一個乾淨的個人網站</h1>
+            <p class="post-meta">
+              <time datetime="2026-05-05">May 5, 2026</time>
+              · 網站, 筆記
+            </p>
+          </header>
+
+          <div class="post-content">
+            <p>
+              我想要的網站不需要一開始就很複雜。先有首頁、文章列表、文章頁，
+              就已經足夠開始寫東西。
+            </p>
+
+            <h2>先把結構做小</h2>
+            <p>
+              一個清楚的個人網站，可以從幾個檔案開始：首頁放文章列表，文章放在
+              posts 資料夾，樣式集中在一個 CSS 檔。
+            </p>
+
+            <h2>之後再慢慢升級</h2>
+            <p>
+              當文章變多，再考慮 Hugo、Astro 或其他工具。這樣每一步都知道自己
+              為什麼需要新工具，而不是一開始就被工具帶著走。
+            </p>
+          </div>
+        </article>
+
+        <p class="post-nav">
+          <a href="../index.html">← Back to posts</a>
+        </p>
+      </main>
+
+      <footer class="site-footer">
+        <p>2026 Navi © CC BY-NC-SA 4.0 · Built for writing</p>
+      </footer>
+    </div>
+  </body>
+</html>
