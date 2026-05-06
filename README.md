@@ -1,76 +1,111 @@
-# Navi's Notes
+# Archie - Hugo theme
+Archie is a minimal and clean theme for hugo with a markdown-ish UI.
 
-這是一個仿照簡潔文字部落格風格的靜態網站。
+Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 
-## 怎麼看
+## Demo
 
-直接用瀏覽器打開 `index.html`。
+[Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile: . You can find the source code to that in the `site` branch of this repository
 
-## 上傳到 GitHub Pages
+![](/images/theme.png)
+![](/images/archie-dark.png)
+## Feature
+- Google Analytics Script
+- Callouts
+- Tags
+- Auto Dark Mode(based on system theme)
+- tl:dr; frontamatter
 
-這個資料夾已經整理成可以直接上傳 GitHub Pages 的靜態網站。
+## Installation
+In your Hugo website directory, create a new folder named theme and clone the repo
+```bash
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/athul/archie.git
+```
+Edit the `config.toml` file with `theme="archie"`
+For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
-需要上傳的內容：
-
-- `index.html`
-- `style.css`
-- `posts/`
-- `assets/`
-- `.nojekyll`
-- `README.md`
-
-不用上傳：
-
-- `.DS_Store`
-
-### 發布步驟
-
-1. 到 GitHub 建一個新的 repository
-2. 把這個資料夾的檔案上傳到 repository
-3. 進入 repository 的 `Settings`
-4. 左側找到 `Pages`
-5. `Source` 選 `Deploy from a branch`
-6. `Branch` 選 `main`
-7. 資料夾選 `/root`
-8. 按 `Save`
-
-等一兩分鐘後，GitHub Pages 會給你一個網址。
-
-如果 repository 名稱是一般名稱，例如 `my-blog`，網址會像：
-
-```text
-https://你的帳號.github.io/my-blog/
+## Writing Posts
+Create a new `.md` file in the *content/posts* folder
+```yml
+---
+title: Title of the post
+description:
+date:
+tldr: (optional)
+draft: false/false (optional)
+tags: [tag names] (optional)
+---
 ```
 
-如果 repository 名稱是 `你的帳號.github.io`，網址會像：
+## Credits
+Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
+Inspired by design of blog.jse.li
 
-```text
-https://你的帳號.github.io/
+----
+
+## Config of the Demo Site
+
+```toml
+baseURL = "https://athul.github.io/archie/"
+languageCode = "en-us"
+title = "Archie"
+theme="archie"
+copyright = "© Athul"
+# Code Highlight
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+paginate=3 # articles per page
+
+[params]
+	mode="auto" # color-mode → light,dark or auto
+	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
+	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+
+# Social Tags
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/athul/archie"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/athulcajay/"
+
+[[params.social]]
+name = "GitLab"
+icon = "gitlab"
+url = "https://gitlab.com/athul/"
+
+# Main menu Items
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
 ```
+---
 
-## 怎麼改
+If you liked my work please consider supporting me on [BuymeACoffee](https://www.buymeacoffee.com/athulca)
 
-- 網站標題：改 `index.html` 裡的 `Navi's Notes`
-- 文章列表：改 `<ul class="post-list">` 裡面的每一個 `<li>`
-- 顏色與字體：改 `style.css`
-- 版權文字：改 `<footer class="site-footer">`
-
-## 怎麼寫新文章
-
-1. 複製 `templates/post-template.html`
-2. 貼到 `posts/` 資料夾，改成新的檔名，例如 `my-note.html`
-3. 打開新檔案，改文章標題、日期、標籤和內文
-4. 回到 `index.html`，在 `<ul class="post-list">` 最上面新增一列文章連結
-
-文章連結範例：
-
-```html
-<li>
-  <a href="./posts/my-note.html">我的新文章</a>
-  <time datetime="2026-05-06">May 6, 2026</time>
-</li>
-```
-
-## 下一步
-
-如果文章會越來越多，可以把這個版型搬到 Hugo、Astro 或 Next.js，讓文章改成 Markdown 管理。
+<a href="https://www.buymeacoffee.com/athulca" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="41" width="174" ></a>

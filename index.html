@@ -1,78 +1,12 @@
-<!doctype html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navi's Notes</title>
-    <meta
-      name="description"
-      content="Navi 的個人筆記、文章和作品紀錄。"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="site">
-      <header class="site-header">
-        <a class="brand" href="./index.html">Navi's Notes</a>
-        <nav class="nav" aria-label="主要導覽">
-          <a href="./index.html">Home</a>
-          <a aria-current="page" href="./index.html">Posts</a>
-          <a href="#about">About</a>
-          <a href="#tags">Tags</a>
-        </nav>
-      </header>
+{{ define "main" }}
+<h1 class="page-title">All Posts</h1>
 
-      <main>
-        <h1>All Posts</h1>
-
-        <ul class="post-list" aria-label="文章列表">
-          <li>
-            <a href="./posts/my-first-post.html">我的第一篇文章</a>
-            <time datetime="2026-05-06">May 6, 2026</time>
-          </li>
-          <li>
-            <a href="./posts/building-a-clean-blog.html">如何開始架一個乾淨的個人網站</a>
-            <time datetime="2026-05-05">May 5, 2026</time>
-          </li>
-          <li>
-            <a href="./posts/turning-thoughts-into-notes.html">讀書筆記：把想法整理成文章</a>
-            <time datetime="2026-04-20">Apr 20, 2026</time>
-          </li>
-          <li>
-            <a href="./posts/one-afternoon.html">旅行紀錄：某個下午</a>
-            <time datetime="2026-03-12">Mar 12, 2026</time>
-          </li>
-          <li>
-            <a href="./posts/tools-and-experiments.html">作品紀錄：小工具與實驗</a>
-            <time datetime="2026-02-01">Feb 1, 2026</time>
-          </li>
-          <li>
-            <a href="./posts/things-i-want-to-learn.html">關於我想學會的事</a>
-            <time datetime="2026-01-19">Jan 19, 2026</time>
-          </li>
-        </ul>
-
-        <section id="about" class="info-section" aria-labelledby="about-title">
-          <h2 id="about-title">About</h2>
-          <p>
-            這裡放一些學習紀錄、生活觀察、作品實驗，以及還沒想清楚但想先寫下來的東西。
-          </p>
-        </section>
-
-        <section id="tags" class="info-section" aria-labelledby="tags-title">
-          <h2 id="tags-title">Tags</h2>
-          <p>
-            <a href="./index.html">生活</a>
-            <a href="./index.html">學習</a>
-            <a href="./index.html">作品</a>
-            <a href="./index.html">筆記</a>
-          </p>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>2026 Navi © CC BY-NC-SA 4.0 · Built for writing</p>
-      </footer>
-    </div>
-  </body>
-</html>
+<ul class="posts">
+  {{- range where .Site.RegularPages "Section" "posts" -}}
+  <li class="post">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="meta">{{ dateFormat ":date_medium" .Date }}</span>
+  </li>
+  {{- end -}}
+</ul>
+{{ end }}
